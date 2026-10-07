@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0d1117;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --ubuntu-orange: #e95420;
+    --ubuntu-purple: #77216f;
+    --linux-green: #10b981;
+    --linux-blue: #3b82f6;
+    --linux-cyan: #06b6d4;
+  }
+
+  body {
+    background-color: #0b0f19;
+    color: #e6edf3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes terminalScan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.terminal-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.8), transparent);
+  animation: terminalScan 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Custom Utilities */
+.ubuntu-gradient-text {
+  background: linear-gradient(135deg, #e95420 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.linux-neon-text {
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(48, 54, 61, 0.8);
+  border-radius: 0.75rem;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.presentation-mode {
+  font-size: 1.15rem;
+}

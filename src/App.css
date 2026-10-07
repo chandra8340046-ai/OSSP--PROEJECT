@@ -1,0 +1,5 @@
+/* App level CSS resets if needed */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
